@@ -138,8 +138,8 @@ def main():
 
                         x1 = p[0][0] * width
                         y1 = p[0][1] * height
-                        x2 = x1 + width * p[0][2]
-                        y2 = y1 + height * p[0][3]
+                        x2 = p[0][2] * width
+                        y2 = p[0][3] * height
 
                         if p[2] == 1:
                             color = (0, 255, 255)
@@ -149,7 +149,7 @@ def main():
                         cv2.rectangle(frame, (int(x1), int(y1), int(x2), int(y2)), color)
 
                         text = "{} ({:.2%})".format(labels[p[2]], float(p[1]))
-                        cv2.putText(frame, text, (int(x1), int(y1)-10), cv2.FONT_HERSHEY_SIMPLEX, .5, color, thickness=2)
+                        cv2.putText(frame, text, (int(x1), int(y1)+10), cv2.FONT_HERSHEY_SIMPLEX, .5, color, thickness=2)
 
             cv2.imshow('frame', frame)
 
