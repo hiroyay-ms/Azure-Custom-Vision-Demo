@@ -41,7 +41,7 @@ def main(event: func.EventGridEvent):
     height, width, depth = image.shape
 
     # 一時ファイルとして保存
-    filename = tempfile.gettempdir() + "o-" + image_url[image_url.rindex('/'):]
+    filename = tempfile.gettempdir() + "/o-" + image_url[image_url.rindex('/')+1:]
     #filename = tempfile.gettempdir() + "\o-" + image_url[image_url.rindex('/')+1:]
     logging.info("Temporary File: %s", filename)
 
